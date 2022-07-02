@@ -1,31 +1,30 @@
-import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { addTocart } from '../../../redux/action/CountryActions'
-import { rootState } from '../../../redux/reducers/RootReducer'
-import { Country } from "../../../types";
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { addTocart } from "../../../redux/action/CardActions";
+import { rootState } from "../../../redux/reducers/RootReducer";
+import { Card } from "../../../types";
 
+const SingleCard = ({ card }: { card: Card }) => {
+  const dispatch = useDispatch();
+  const { cart } = useSelector((state: rootState) => state.CardReducer);
 
-const Card = ({country}:{country: Country}) => {
-    const dispatch = useDispatch()
-  const { cart } = useSelector((state: rootState) => state.CountryReducer);
-
-    return (
+  return (
     <div
-    onClick={() => dispatch(addTocart(country))}
-    className={country.id === cart.id ? "card selected" : "card"}
-    key={country.id}
-  >
-    <p>
-      <b>Real Name</b>:&nbsp;{country.Real_Name}
-    </p>
-    <p>
-      <b>Player Name</b>:&nbsp;{country.Player_Name}
-    </p>
-    <p>
-      <b>Asset...</b>
-    </p>
-  </div>
-  )
-}
+      onClick={() => dispatch(addTocart(card))}
+      className={card.id === cart.id ? "card selected" : "card"}
+      key={card.id}
+    >
+      <p>
+        <b>Real Name</b>:&nbsp;{card.Real_Name}
+      </p>
+      <p>
+        <b>Player Name</b>:&nbsp;{card.Player_Name}
+      </p>
+      <p>
+        <b>Asset...</b>
+      </p>
+    </div>
+  );
+};
 
-export default Card
+export default SingleCard;

@@ -1,50 +1,42 @@
 import {
-  ADD_TO_CART,
-  GET_COUNTRIES,
-  SET_FILTERED_DATA,
+  ADD_TO_CARD_DETAILS,
+  GET_CARDS,
   Submit_Handling_Action,
 } from "./redux/action/ActionTypes";
 
-export type Country = {
+export type Card = {
   id: number;
   Real_Name: string;
   Player_Name: string;
   Asset: string;
 };
 
-export type MyCountry = {
-  countries: Country[];
+export type MyCard = {
+  cards: Card[];
 };
 
 //types of Actions for types.ts .....................
-export type GetCountries = {
-  type: typeof GET_COUNTRIES; //only in type,we need to call type in this way: typeof GET_COUNTRIES
+export type GetCards = {
+  type: typeof GET_CARDS; //only in type,we need to call type in this way: typeof GET_COUNTRIES
   payload: {
-    countries: Country[];
+    cards: Card[];
   };
 };
-export type setFiltered = {
-  type: typeof SET_FILTERED_DATA; //only in type,we need to call type in this way: typeof GET_COUNTRIES
+export type AddToCardDetailsAction = {
+  type: typeof ADD_TO_CARD_DETAILS;
   payload: {
-    filtered: Country[];
-  };
-};
-export type AddToCartAction = {
-  type: typeof ADD_TO_CART;
-  payload: {
-    country: Country;
+    card: Card;
   };
 };
 export type submitHandlingAction = {
   type: typeof Submit_Handling_Action;
   payload: {
-    country: Country;
+    card: Card;
   };
 };
 
 // to make type for action in reducer,we need to do union of every action's type from here.
-export type CountryActions =
-  | AddToCartAction
-  | GetCountries
-  | submitHandlingAction
-  | setFiltered;
+export type CardActions =
+  | AddToCardDetailsAction
+  | GetCards
+  | submitHandlingAction;

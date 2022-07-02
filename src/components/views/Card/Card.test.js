@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
-import Card from "./index";
+import SingleCard from "./index";
 
-const mockCountry = {
+const mockCard = {
   id: 1,
   Real_Name: "Brianna Forbes",
   Player_Name: "Dreamlurk The Unstoppable",
@@ -9,7 +9,7 @@ const mockCountry = {
 };
 
 test("renders learn react link", () => {
-  render(<Card country={mockCountry} />);
+  render(<SingleCard card={mockCard} />);
   const linkElement = screen.getByText(/Briannaa Forbes/);
   expect(linkElement).toBeInTheDocument();
 });

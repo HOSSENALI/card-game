@@ -1,10 +1,9 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { rootState } from "../../redux/reducers/RootReducer";
-import { Country } from "../../types";
 
 const Cart = () => {
-  const { cart } = useSelector((state: rootState) => state.CountryReducer);
+  const { cart } = useSelector((state: rootState) => state.CardReducer);
   return (
     <>
       <div className="details">
