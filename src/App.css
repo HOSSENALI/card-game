@@ -13,6 +13,7 @@ body{
   float: left;
   width: 32%;
   height: 200px;
+  background-color: #fff;
   visibility: visible;
 }
 .details {
@@ -44,8 +45,8 @@ body{
 }
 .flex-control{
   display: grid;
-  height: 100px;
-  align-content: end;
+  height: 75px;
+  align-content: center;
   grid-template-columns: auto auto;
   gap: 10px;
   padding: 10px;
@@ -69,6 +70,6 @@ button {
   display:none;
 }
 .heading-control{
-  margin-top:100px;
+  margin-top:47px;
   margin-left: 20px;
 }

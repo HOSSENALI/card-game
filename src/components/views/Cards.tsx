@@ -1,20 +1,18 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { rootState } from "../../redux/reducers/RootReducer";
-import { Country } from "../../types";
-import Card from "./Card/index";
-const CountryTable = () => {
-  const { filteredData, cart } = useSelector(
-    (state: rootState) => state.CountryReducer
-  );
+import { Card } from "../../types";
+import SingleCard from "./Card/index";
+const Cards = () => {
+  const { cards, cart } = useSelector((state: rootState) => state.CardReducer);
 
   return (
     <>
-      {filteredData.map((country: Country) => (
-        <Card country={country} />
+      {cards.map((card: Card) => (
+        <SingleCard card={card} key={card.id} />
       ))}
     </>
   );
 };
 
-export default CountryTable;
+export default Cards;

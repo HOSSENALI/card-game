@@ -1,37 +1,31 @@
 import React from "react";
 
-import "../App.css";
 import { useSelector, useDispatch } from "react-redux";
-import { useCallback, useEffect, useState } from "react";
-
-import { rootState } from "../redux/reducers/RootReducer";
-import Details from "../components/views/Details";
-import Cards from "../components/views/Cards";
-
-import Search from "./Search";
-import { Country } from "../types";
+import { useEffect } from "react";
+import { rootState } from "../../redux/reducers/RootReducer";
+import Details from "../../components/views/Details";
+import Cards from "../../components/views/Cards";
 import {
-  fetchCountries,
+  fetchCards,
   handleAscendingSortAction,
   handleDescendingSortAction,
   submitHandlingAction,
-} from "../redux/action/CountryActions";
+} from "../../redux/action/CardActions";
 
 function Home() {
-  const { cart, isVisible } = useSelector(
-    (state: rootState) => state.CountryReducer
+  const { cart, isVisible, cards } = useSelector(
+    (state: rootState) => state.CardReducer
   );
   const dispatch = useDispatch();
-  // const [visible, setVisible] = useState(true);
 
   useEffect(() => {
-    dispatch(fetchCountries() as any);
+    dispatch(fetchCards() as any);
   }, [dispatch]);
   const handleAscendingSort = () => {
-    dispatch(handleAscendingSortAction() as any);
+    dispatch(handleAscendingSortAction(cards));
   };
   const handleDescendingSort = () => {
-    dispatch(handleDescendingSortAction() as any);
+    dispatch(handleDescendingSortAction(cards));
   };
   const submitHandling = async () => {
     dispatch(submitHandlingAction(cart));
