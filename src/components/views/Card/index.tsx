@@ -1,4 +1,5 @@
 import React from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { useDispatch, useSelector } from "react-redux";
 import { addTocart } from "../../../redux/action/CardActions";
 import { rootState } from "../../../redux/reducers/RootReducer";
@@ -9,7 +10,12 @@ const SingleCard = ({ card }: { card: Card }) => {
   const { cart } = useSelector((state: rootState) => state.CardReducer);
 
   return (
-    <div
+    <motion.div
+      layout
+      animate={{ opacity: 1 }}
+      initial={{ opacity: 0 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 1 }}
       onClick={() => dispatch(addTocart(card))}
       className={card.id === cart.id ? "card selected" : "card"}
       key={card.id}
@@ -23,7 +29,7 @@ const SingleCard = ({ card }: { card: Card }) => {
       <p>
         <b>Asset...</b>
       </p>
-    </div>
+    </motion.div>
   );
 };
 
