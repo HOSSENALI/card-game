@@ -1,4 +1,5 @@
 import React from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { useSelector } from "react-redux";
 import { rootState } from "../../redux/reducers/RootReducer";
 
@@ -6,7 +7,14 @@ const Cart = () => {
   const { cart } = useSelector((state: rootState) => state.CardReducer);
   return (
     <>
-      <div className="details">
+      <motion.div
+        layout
+        animate={{ opacity: 1 }}
+        initial={{ opacity: 0 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 1 }}
+        className="details"
+      >
         <h1 className="heading">Details</h1>
         <p>
           <b>Real Name:</b> {cart.Real_Name}
@@ -19,7 +27,7 @@ const Cart = () => {
           <b>Asset: </b>
           {cart.Asset}
         </p>
-      </div>
+      </motion.div>
     </>
   );
 };
