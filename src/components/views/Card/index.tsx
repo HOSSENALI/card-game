@@ -1,5 +1,5 @@
 import React from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { useDispatch, useSelector } from "react-redux";
 import { addTocart } from "../../../redux/action/CardActions";
 import { rootState } from "../../../redux/reducers/RootReducer";
@@ -19,6 +19,7 @@ const SingleCard = ({ card }: { card: Card }) => {
       onClick={() => dispatch(addTocart(card))}
       className={card.id === cart.id ? "card selected" : "card"}
       key={card.id}
+      data-testid="card"
     >
       <p>
         <b>Real Name</b>:&nbsp;{card.Real_Name}

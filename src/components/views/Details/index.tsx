@@ -1,7 +1,7 @@
 import React from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { useSelector } from "react-redux";
-import { rootState } from "../../redux/reducers/RootReducer";
+import { rootState } from "../../../redux/reducers/RootReducer";
 
 const Cart = () => {
   const { cart } = useSelector((state: rootState) => state.CardReducer);

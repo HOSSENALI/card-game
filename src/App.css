@@ -1,11 +1,16 @@
-
-body{
+body {
   margin: 20px;
   background-color: #fbf3f3;
 }
 * {
   box-sizing: border-box;
 }
+.title {
+  font-size: 35px;
+  font-weight: bold;
+  text-align: center;
+}
+
 .card {
   margin: 5px;
   padding: 10px;
@@ -25,32 +30,30 @@ body{
   background-color: white;
 }
 
-.card:hover, .card.selected {
+.card:hover,
+.card.selected {
   border: 1px solid #777;
   background-color: #f0e8e8;
 }
 .flex-container {
   display: flex;
   flex-direction: row;
-  
 }
 
-.flex-child1{
+.flex-child1 {
   width: 70%;
   display: flex;
   flex-direction: column;
-  
-  margin:10px;
-  
+
+  margin: 10px;
 }
-.flex-control{
+.flex-control {
   display: grid;
   height: 75px;
   align-content: center;
   grid-template-columns: auto auto;
   gap: 10px;
   padding: 10px;
-  
 }
 
 button {
@@ -61,15 +64,15 @@ button {
   padding: 10px 32px;
   margin: 5px;
 }
-.submitButton>button{
+.submitButton > button {
   width: 90%;
-  margin:5%;
+  margin: 5%;
   align-content: center;
 }
-.hidden{
-  display:none;
+.hidden {
+  display: none;
 }
-.heading-control{
-  margin-top:47px;
+.heading-control {
+  margin-top: 47px;
   margin-left: 20px;
 }
