@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { useDispatch, useSelector } from "react-redux";
-import { addTocart } from "../../../redux/action/CardActions";
+import { cardDetails } from "../../../redux/action/CardActions";
 import { rootState } from "../../../redux/reducers/RootReducer";
 import { Card } from "../../../types";
 
@@ -16,7 +16,7 @@ const SingleCard = ({ card }: { card: Card }) => {
       initial={{ opacity: 0 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 1 }}
-      onClick={() => dispatch(addTocart(card))}
+      onClick={() => dispatch(cardDetails(card))}
       className={card.id === cart.id ? "card selected" : "card"}
       key={card.id}
       data-testid="card"

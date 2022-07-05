@@ -1,5 +1,4 @@
 import { Card, CardActions } from "../../types";
-
 import { ADD_TO_CARD_DETAILS, GET_CARDS } from "../action/ActionTypes";
 
 type InitialState = {
@@ -7,6 +6,7 @@ type InitialState = {
   cart: Card;
   isVisible: boolean;
 };
+
 const initialState: InitialState = {
   cards: [],
   cart: {
@@ -17,6 +17,7 @@ const initialState: InitialState = {
   },
   isVisible: false,
 };
+
 export default function CardReducer(
   state = initialState,
   action: CardActions
