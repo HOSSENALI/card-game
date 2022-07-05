@@ -1,6 +1,8 @@
-body {
+
+body{
   margin: 20px;
-  background-color: #fbf3f3;
+  /* background-color: #fbf3f3; */
+  background-image:url("utils/background.jpg"); ;
 }
 * {
   box-sizing: border-box;
@@ -10,69 +12,113 @@ body {
   font-weight: bold;
   text-align: center;
 }
-
 .card {
   margin: 5px;
-  padding: 10px;
+  padding: 15px;
   border: 1px solid #ccc;
   float: left;
-  width: 32%;
-  height: 200px;
-  background-color: #fff;
-  visibility: visible;
+  width: 32.1%;
+  height: fit-content;
+  background-color: lightblue;
+  box-shadow: 0 4px 4px 0 rgb(0, 136, 255), 0 6px 10px 0 yellow;
+  border-radius: 10px; 
+
 }
 .details {
   margin: 5px;
-  padding: 10px;
+  padding: 15px;
   border: 1px solid #ccc;
-  width: 0 auto;
-  height: 20vw;
-  background-color: white;
+  background-color: lightblue;
+  box-shadow: 0 4px 8px 0 rgb(0, 136, 255), 0 6px 20px 0 yellow;
+  border-radius: 5px;
+  height: fit-content;
+ 
 }
 
-.card:hover,
-.card.selected {
-  border: 1px solid #777;
+.card:hover, .card.selected {
+  border: 1px solid rgb(234, 60, 63);
   background-color: #f0e8e8;
+  width: 31.9%;
+  
 }
 .flex-container {
   display: flex;
   flex-direction: row;
+ 
 }
 
-.flex-child1 {
+.flex-child1{
   width: 70%;
   display: flex;
   flex-direction: column;
-
-  margin: 10px;
+  margin:10px;
 }
-.flex-control {
+.flex-control{
   display: grid;
-  height: 75px;
+  height: 70px;
   align-content: center;
   grid-template-columns: auto auto;
   gap: 10px;
   padding: 10px;
+  
 }
 
 button {
-  background-color: #afa04c; /* Green */
+  background-color: lightblue; /* Green */
   border: none;
   border-radius: 10px;
-  color: white;
+  color: rgb(18, 17, 17);
   padding: 10px 32px;
   margin: 5px;
+  height: 40px;
+  font-size: .8em;
+  font-weight: bold;
 }
-.submitButton > button {
+.submitButton>button{
   width: 90%;
-  margin: 5%;
+  margin:5%;
   align-content: center;
 }
-.hidden {
-  display: none;
+.hidden{
+  display:none;
 }
-.heading-control {
-  margin-top: 47px;
-  margin-left: 20px;
+.heading-control{
+  margin-top:40px;
+  margin-left: 15px;
 }
+
+
+.card p{
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.heading{
+  margin-left: 10px;
+}
+
+
+/* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .flex-child1, .card, .flex-child2, .details{
+   width: fit-content;
+   height: fit-content;
+  }
+}
+
+/* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .flex-child2{
+   width: fit;
+  
+  }
+}
+
+/* On screens that are 900px wide or less, make the columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 900px) {
+   .card,.details{
+   width: 100%;
+   height: fit-content;
+  }
+}
+
