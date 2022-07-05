@@ -7,16 +7,6 @@ import { createRoot } from "react-dom/client";
 
 
 let store = Store();
-// const root = ReactDOM.createRoot(document.getElementById('root'));
-
-// ReactDOM.render(
-//   <React.StrictMode>
-//     <Provider store={store}>
-//       <App />
-//     </Provider>
-//   </React.StrictMode>,
-//   document.getElementById('root')
-// );
 
 const container = document.getElementById("root");
 // @ts-ignore

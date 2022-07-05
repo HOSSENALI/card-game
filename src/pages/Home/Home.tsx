@@ -28,7 +28,9 @@ function Home() {
     dispatch(handleDescendingSortAction(cards));
   };
   const submitHandling = async () => {
-    dispatch(submitHandlingAction(cart));
+    cart.id !== 0
+      ? dispatch(submitHandlingAction(cart))
+      : alert("Nothing is selected");
   };
 
   return (
@@ -45,16 +47,16 @@ function Home() {
       </div>
 
       <div className="flex-child2">
-        <h1 className="heading-control">Controls</h1>
+        <h1 className="heading">Controls</h1>
         <div className="flex-control">
-          <div className="control">
+          <div className="flex-button">
             <button onClick={handleAscendingSort}>SORT ASC</button>
           </div>
-          <div className="control">
+          <div className="flex-button">
             <button onClick={handleDescendingSort}>SORT DESC</button>
           </div>
         </div>
-        <div className="submitButton">
+        <div className="flex-submit">
           <button onClick={submitHandling}> Submit</button>
         </div>
       </div>

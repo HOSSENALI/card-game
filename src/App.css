@@ -1,23 +1,30 @@
 
 body{
-  margin: 20px;
-  /* background-color: #fbf3f3; */
-  background-image:url("utils/background.jpg"); ;
+  margin: 10%;
+  background-image:url("utils/background.jpg");
+  font-style: italic;
 }
 * {
   box-sizing: border-box;
 }
 .title {
-  font-size: 35px;
+  font-size: 55px;
+  margin-bottom: -10px;
   font-weight: bold;
   text-align: center;
+  text-shadow: 5px 2px 4px rgb(197, 192, 216);
+  font-family: "Audiowide", sans-serif;
+}
+.heading{
+  font-family: "Audiowide", sans-serif;
+  text-shadow: 5px 2px 4px rgb(197, 192, 216);
 }
 .card {
   margin: 5px;
   padding: 15px;
   border: 1px solid #ccc;
   float: left;
-  width: 32.1%;
+  width: 31%;
   height: fit-content;
   background-color: lightblue;
   box-shadow: 0 4px 4px 0 rgb(0, 136, 255), 0 6px 10px 0 yellow;
@@ -25,20 +32,21 @@ body{
 
 }
 .details {
-  margin: 5px;
-  padding: 15px;
+  margin: 10px 0px;
+  padding: 0px 10px;
   border: 1px solid #ccc;
   background-color: lightblue;
   box-shadow: 0 4px 8px 0 rgb(0, 136, 255), 0 6px 20px 0 yellow;
   border-radius: 5px;
   height: fit-content;
+  width: 97%;
  
 }
 
 .card:hover, .card.selected {
   border: 1px solid rgb(234, 60, 63);
   background-color: #f0e8e8;
-  width: 31.9%;
+  width: 30.9%;
   
 }
 .flex-container {
@@ -53,6 +61,7 @@ body{
   flex-direction: column;
   margin:10px;
 }
+
 .flex-control{
   display: grid;
   height: 70px;
@@ -65,60 +74,56 @@ body{
 
 button {
   background-color: lightblue; /* Green */
-  border: none;
   border-radius: 10px;
   color: rgb(18, 17, 17);
   padding: 10px 32px;
   margin: 5px;
-  height: 40px;
+  width: fit-content;
   font-size: .8em;
   font-weight: bold;
+  white-space: nowrap;
+  
 }
-.submitButton>button{
+.flex-submit>button{
   width: 90%;
   margin:5%;
   align-content: center;
+  font-size: large;
 }
 .hidden{
   display:none;
 }
-.heading-control{
-  margin-top:40px;
-  margin-left: 15px;
-}
-
 
 .card p{
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+  /* font-size: .8em; */
 }
 .heading{
   margin-left: 10px;
 }
 
-
 /* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 600px) {
-  .flex-child1, .card, .flex-child2, .details{
-   width: fit-content;
+  .card, .flex-child2, .details,.card:hover,.card.selected,.flex-container{
+   width: 100%;
    height: fit-content;
+   flex-direction: column-reverse;
+   align-items: center;
   }
 }
-
-/* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 600px) {
-  .flex-child2{
-   width: fit;
-  
-  }
-}
-
-/* On screens that are 900px wide or less, make the columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 900px) {
-   .card,.details{
+  .flex-child1{
    width: 100%;
    height: fit-content;
   }
 }
+@media screen and (max-width: 600px) {
+  .flex-control{
+   /* margin-left:15px; */
+   padding: 0% 10%;
+  }
+}
+
 
