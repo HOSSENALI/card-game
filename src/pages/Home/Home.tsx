@@ -1,8 +1,7 @@
-import React from "react";
-
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { rootState } from "../../redux/reducers/RootReducer";
+
 import Details from "../../components/views/Details";
 import Cards from "../../components/views/Cards";
 import {
