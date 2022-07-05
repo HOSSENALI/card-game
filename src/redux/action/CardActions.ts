@@ -56,14 +56,14 @@ export function cardDetails(card: Card): AddToCardDetailsAction {
   };
 }
 
-// saving data by hitting a fake API 
+// saving data by hitting a mocked API
 export const submitHandlingAction =
   (card: Card): any =>
-  (dispatch: Dispatch) => {
+  () => {
     axios
       .post("https://jsonplaceholder.typicode.com/posts", JSON.stringify(card))
       .then((response) => {
         console.log(response);
-        alert("Successful");
+        alert("Mocked API is successfully called");
       });
   };

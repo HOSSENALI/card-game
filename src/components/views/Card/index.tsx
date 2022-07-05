@@ -28,7 +28,7 @@ const SingleCard = ({ card }: { card: Card }) => {
         <b>Player Name</b>:&nbsp;{card.Player_Name}
       </p>
       <p>
-        <b>Asset...</b>
+        <b>Asset</b>:&nbsp;{card.Asset}
       </p>
     </motion.div>
   );
