@@ -26,3 +26,7 @@ Built with these following technologies :
 # To run all tests
 
 ## `npm test`
+
+# To create a production build
+
+## `npm run build`
