@@ -11,13 +11,9 @@ export type Card = {
   Asset: string;
 };
 
-export type MyCard = {
-  cards: Card[];
-};
-
 //types of Actions for types.ts .....................
 export type GetCards = {
-  type: typeof GET_CARDS; //only in type,we need to call type in this way: typeof GET_COUNTRIES
+  type: typeof GET_CARDS; 
   payload: {
     cards: Card[];
   };

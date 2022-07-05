@@ -1,6 +1,6 @@
-import React from "react";
 import { motion } from "framer-motion";
 import { useDispatch, useSelector } from "react-redux";
+
 import { cardDetails } from "../../../redux/action/CardActions";
 import { rootState } from "../../../redux/reducers/RootReducer";
 import { Card } from "../../../types";
