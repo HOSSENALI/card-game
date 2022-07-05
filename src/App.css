@@ -1,7 +1,6 @@
-
-body{
+body {
   margin: 0% 10%;
-  background-image:url("utils/background.jpg");
+  background-image: url("utils/background.jpg");
   font-style: italic;
 }
 * {
@@ -15,7 +14,7 @@ body{
   text-shadow: 5px 2px 4px rgb(197, 192, 216);
   font-family: "Audiowide", sans-serif;
 }
-.heading{
+.heading {
   font-family: "Audiowide", sans-serif;
   text-shadow: 5px 2px 4px rgb(197, 192, 216);
 }
@@ -28,8 +27,7 @@ body{
   height: fit-content;
   background-color: lightblue;
   box-shadow: 0 4px 4px 0 rgb(0, 136, 255), 0 6px 10px 0 yellow;
-  border-radius: 10px; 
-
+  border-radius: 10px;
 }
 .details {
   margin: 10px 0px;
@@ -40,36 +38,33 @@ body{
   border-radius: 5px;
   height: fit-content;
   width: 97%;
- 
 }
 
-.card:hover, .card.selected {
+.card:hover,
+.card.selected {
   border: 1px solid rgb(234, 60, 63);
   background-color: #f0e8e8;
   width: 30.9%;
-  
 }
 .flex-container {
   display: flex;
   flex-direction: row;
- 
 }
 
-.flex-child1{
+.flex-child1 {
   width: 70%;
   display: flex;
   flex-direction: column;
-  margin:10px;
+  margin: 10px;
 }
 
-.flex-control{
+.flex-control {
   display: grid;
   height: 60px;
   align-content: center;
   grid-template-columns: auto auto;
   gap: 10px;
   padding: 10px;
-  
 }
 
 button {
@@ -79,59 +74,63 @@ button {
   padding: 10px 32px;
   margin: 5px;
   width: fit-content;
-  font-size: .8em;
+  font-size: 0.8em;
   font-weight: bold;
   white-space: nowrap;
+  cursor: pointer;
 }
 
-.flex-submit>button{
+.flex-submit > button {
   width: 90%;
-  margin:5%;
+  margin: 5%;
   align-content: center;
   font-size: large;
 }
 
-.hidden{
-  display:none;
+.hidden {
+  display: none;
 }
 
-.card p{
+.card p {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
 }
 
-.heading{
+.heading {
   margin-left: 10px;
 }
 
 /* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 600px) {
-  .card, .flex-child2, .details,.card:hover,.card.selected,.flex-container{
-   width: 100%;
-   height: fit-content;
-   flex-direction: column-reverse;
-   align-items: center;
+  .card,
+  .flex-child2,
+  .details,
+  .card:hover,
+  .card.selected,
+  .flex-container {
+    width: 100%;
+    height: fit-content;
+    flex-direction: column-reverse;
+    align-items: center;
   }
 }
 
 @media screen and (max-width: 600px) {
-  .flex-child1{
-   width: 100%;
-   height: fit-content;
+  .flex-child1 {
+    width: 100%;
+    height: fit-content;
   }
 }
 
 @media screen and (max-width: 600px) {
-  .flex-control{
-   padding: 0% 10%;
+  .flex-control {
+    padding: 0% 10%;
   }
 }
 
 @media screen and (max-width: 400px) {
-  .flex-control{
-   padding: 0%;
+  .flex-control {
+    padding: 0%;
   }
 }
-
-
